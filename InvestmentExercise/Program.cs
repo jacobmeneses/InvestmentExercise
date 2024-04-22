@@ -12,6 +12,7 @@ builder.Services.AddSwaggerGen();
 
 builder.Services.AddScoped<InvestmentService>();
 builder.Services.AddScoped<UserService>();
+builder.Services.AddScoped<OportunityService>();
 builder.Services.AddSqlite<InvestmentExerciseContext>("Data Source=InvestmentExercise.db");
 
 var app = builder.Build();

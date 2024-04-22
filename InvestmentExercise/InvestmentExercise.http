@@ -9,3 +9,7 @@ Content-Type: application/json
   "amount": 50
 }
 ###
+
+GET {{InvestmentExercise_HostAddress}}/api/Oportunity/marketplace
+Content-Type: application/json
+###
