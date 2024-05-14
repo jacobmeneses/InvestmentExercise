@@ -15,6 +15,18 @@ builder.Services.AddScoped<UserService>();
 builder.Services.AddScoped<OportunityService>();
 builder.Services.AddSqlite<InvestmentExerciseContext>("Data Source=InvestmentExercise.db");
 
+// TODO: "AllowAllOrigins" only on dev
+builder.Services.AddCors(options =>
+        {
+            options.AddPolicy("AllowAllOrigins",
+            builder =>
+            {
+                builder.AllowAnyOrigin()
+                    .AllowAnyHeader()
+                    .AllowAnyMethod();
+            });
+        });
+
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
@@ -31,5 +43,8 @@ app.UseAuthorization();
 app.MapControllers();
 
 app.CreateDbIfNotExists();
+
+// Enable CORS
+app.UseCors("AllowAllOrigins");
 
 app.Run();
