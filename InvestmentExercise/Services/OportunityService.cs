@@ -15,6 +15,7 @@ namespace InvestmentExercise.Services
         public IEnumerable<Oportunity> GetAll()
         {
             return _context.Oportunities
+                .Include(o => o.Company)
                 .AsNoTracking()
                 .ToList();
         }

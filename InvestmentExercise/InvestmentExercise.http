@@ -10,6 +10,6 @@ Content-Type: application/json
 }
 ###
 
-GET {{InvestmentExercise_HostAddress}}/api/Oportunity/marketplace
+GET {{InvestmentExercise_HostAddress}}/api/Oportunity
 Content-Type: application/json
 ###
