@@ -13,3 +13,14 @@ Content-Type: application/json
 GET {{InvestmentExercise_HostAddress}}/api/Oportunity
 Content-Type: application/json
 ###
+
+PUT {{InvestmentExercise_HostAddress}}/api/User/balance
+Content-Type: application/json
+
+{
+  "userId": 2,
+  "amount": 9000,
+  "action": "add"
+}
+###
+

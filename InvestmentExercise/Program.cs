@@ -15,6 +15,12 @@ builder.Services.AddScoped<UserService>();
 builder.Services.AddScoped<OportunityService>();
 builder.Services.AddSqlite<InvestmentExerciseContext>("Data Source=InvestmentExercise.db");
 
+builder.Services.AddLogging(config =>
+{
+    config.AddConsole(); // Enable logging to the console
+    config.AddDebug(); // Optional: Enable logging to the debug output
+});
+
 // TODO: "AllowAllOrigins" only on dev
 builder.Services.AddCors(options =>
         {
